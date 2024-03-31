@@ -1,12 +1,259 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Resume Builder</title>
     <link rel="stylesheet" href="dist/output.css" />
+    <style>
+      .bg-white-btn {
+        padding: 8px 15px;
+        background-color: white;
+        border-radius: 4px;
+        border: 1px solid #1a91f0;
+        color: #1a91f0;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+      }
+      .bg-white-btn:hover {
+        color: #0c4e85;
+      }
+      .bg-blue-btn {
+        padding: 8px 15px;
+        background-color: #1a91f0;
+        border-radius: 4px;
+        border: 1px solid #1a91f0;
+        color: white;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+      }
+      .bg-blue-btn:hover {
+        color: white;
+        background-color: #1376c6;
+      }
+      #nested-div {
+        display: flex;
+        flex-direction: column;
+        animation: slideImages 23s linear infinite; /* Adjust animation duration as needed */
+      }
+      @keyframes slideImages {
+        0% {
+          transform: translateY(0);
+        }
+        100% {
+          transform: translateY(-100%);
+        }
+      }
+      #cards {
+        box-shadow: 0 0 10px 0 rgba(163, 178, 212, 0.3);
+        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      }
+    </style>
   </head>
+
   <body>
-    <h1 class="bg-red-500">Hello World</h1>
+    <!-- main wrapper  -->
+    <div class="fixed z-50 mx-auto w-full bg-white shadow-lg">
+      <!-- container  -->
+      <nav
+        class="mx-auto flex h-[80px] max-w-[1200px] items-center justify-between px-8"
+      >
+        <!-- logo -->
+        <div class="flex justify-center">
+          <div class="bg-white">
+            <img src="./assets/curriculum-vitae.png" alt="logo" width="27px" />
+          </div>
+          <span class="mr-1 text-xl font-semibold">Resume</span>
+          <span class="text-xl font-semibold text-[#1A91F0]">builder.</span>
+        </div>
+        <!-- nav links  -->
+        <ul class="flex gap-6 font-medium uppercase text-[#464b53]">
+          <li>
+            <a href="#" class="hover:border-b-2 hover:border-black">Home</a>
+          </li>
+          <li>
+            <a href="#" class="hover:border-b-2 hover:border-black"
+              >Resume Examples</a
+            >
+          </li>
+          <li>
+            <a href="#" class="hover:border-b-2 hover:border-black"
+              >Career Coaching</a
+            >
+          </li>
+          <li>
+            <a href="#" class="hover:border-b-2 hover:border-black">FAQs</a>
+          </li>
+          <!-- <li><a href="#">About Us</a></li> -->
+        </ul>
+
+        <!-- button  -->
+        <div>
+          <button class="bg-white-btn mr-2">Login</button>
+          <button class="bg-blue-btn">Register</button>
+        </div>
+      </nav>
+    </div>
+
+    <!-- main section/hero section  -->
+    <main class="w-full bg-[#f4f4f4] pt-20">
+      <!-- left section  -->
+      <div class="mx-auto grid h-screen max-w-[1200px] grid-cols-2 px-10">
+        <section class="h-screen">
+          <div class="flex h-full w-[75%] flex-col items-start justify-center">
+            <h1 class="mb-6 text-5xl font-bold text-[#1e2532]">
+              The Ultimate <br />
+              Resume Builder
+            </h1>
+            <p class="mb-6 text-lg">
+              Build beautiful, recruiter-tested resumes in a few clicks! Our
+              resume builder is powerful and easy to use, with a range of
+              amazing functions. Custom-tailor resumes for any job within
+              minutes. Increase your interview chances and rise above the
+              competition.
+            </p>
+            <button class="bg-blue-btn">Create My Resume</button>
+          </div>
+        </section>
+        <!-- right section  -->
+        <section class="flex gap-8 overflow-hidden">
+          <!-- first line -->
+          <div class="flex flex-col gap-8 pt-12" id="nested-div">
+            <span>
+              <img
+                src="https://s3.resume.io/cdn-cgi/image/width=384,format=auto/uploads/local_template_image/image/370/persistent-resource/stockholm-resume-templates.jpg"
+                alt=""
+              />
+            </span>
+            <span>
+              <img
+                src="https://s3.resume.io/cdn-cgi/image/width=384,format=auto/uploads/local_template_image/image/389/persistent-resource/new-york-resume-templates.jpg"
+                alt=""
+              />
+            </span>
+            <span>
+              <img
+                src="https://s3.resume.io/cdn-cgi/image/width=384,format=auto/uploads/local_template_image/image/383/persistent-resource/santiago-resume-templates.jpg"
+                alt=""
+              />
+            </span>
+          </div>
+
+          <!-- second line -->
+          <div class="flex flex-col gap-8" id="nested-div">
+            <span>
+              <img
+                src="https://s3.resume.io/cdn-cgi/image/width=384,format=auto/uploads/local_template_image/image/441/persistent-resource/sydney-resume-templates.jpg"
+                alt=""
+              />
+            </span>
+            <span>
+              <img
+                src="https://s3.resume.io/cdn-cgi/image/width=384,format=auto/uploads/local_template_image/image/488/persistent-resource/dublin-resume-templates.jpg"
+                alt=""
+              />
+            </span>
+            <span>
+              <img
+                src="https://s3.resume.io/cdn-cgi/image/width=384,format=auto/uploads/local_template_image/image/406/persistent-resource/vienna-resume-templates.jpg"
+                alt=""
+              />
+            </span>
+          </div>
+        </section>
+      </div>
+
+      <div class="mt-10 h-screen">
+        <div class="mx-auto max-w-[1200px] px-10">
+          <!-- heading section  -->
+          <section class="mb-16 text-center">
+            <h2 class="mb-3 text-4xl font-semibold">Segments we serve</h2>
+            <p class="text-xl">360° impact on Talent Ecosystem.</p>
+          </section>
+
+          <!-- cards section  -->
+          <section class="grid grid-cols-3 gap-5">
+            <article class="flex flex-col items-center p-8" id="cards">
+              <img
+                height="100"
+                width="100"
+                src="https://d1dcu9ldna0u98.cloudfront.net/assets/website/home/ic-candidate.svg"
+                alt=""
+              />
+              <h4 class="my-3 text-2xl font-semibold">Candidate</h4>
+              <p class="mb-2 text-sm">
+                Accelerate your career journey with SMART Coach that provides
+                instant feedback for targeted careers.
+              </p>
+              <a href="#" class="text-sm text-[#1a91fa]">Know more</a>
+            </article>
+            <article class="flex flex-col items-center p-8" id="cards">
+              <img
+                height="100"
+                width="100"
+                src="https://d1dcu9ldna0u98.cloudfront.net/assets/website/home/ic-corporates.svg"
+                alt=""
+              />
+              <h4 class="my-3 text-2xl font-semibold">Corporate</h4>
+              <p class="mb-2 text-sm">
+                Manage talent navigation with SMART Corporate Career Centre for
+                internal mobility, intelligent hiring and outplacement.
+              </p>
+              <a href="#" class="text-sm text-[#1a91fa]">Know more</a>
+            </article>
+            <article class="flex flex-col items-center p-8" id="cards">
+              <img
+                height="100"
+                width="100"
+                src="https://d1dcu9ldna0u98.cloudfront.net/assets/website/home/ic-career-center.svg"
+                alt=""
+              />
+              <h4 class="my-3 text-2xl font-semibold">Higher Education</h4>
+              <p class="mb-2 text-sm">
+                Engage students and alumni with most advanced AI powered Career
+                Services platform.
+              </p>
+              <a href="#" class="text-sm text-[#1a91fa]">Know more</a>
+            </article>
+          </section>
+        </div>
+      </div>
+
+      <!-- features section  -->
+
+      <div class="h-screen w-full border-2 border-black">
+        <div class="mx-auto max-w-[1200px] px-10">
+          <!-- heading section  -->
+          <section class="mb-12 text-center">
+            <h2 class="mb-3 text-4xl font-semibold">
+              Our AI Platform Fuels Your Success
+            </h2>
+            <p class="text-lg">
+              World-class capabilities powering VMock SMART Career Acceleration
+              Platform.
+            </p>
+          </section>
+
+          <!-- feature section 1 -->
+          <section class="flex">
+            <div>
+              <h4>SMART PARSING</h4>
+              <h3>Instant benchmarking and scoring for targeted guidance</h3>
+              <p>
+                User profiles are evaluated on 100+ parameters including
+                language, skills/competencies, and presentation.
+              </p>
+            </div>
+            <div>
+              <video
+                src="https://d1dcu9ldna0u98.cloudfront.net/assets/website/landing-anims/rp.mp4"
+              ></video>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
   </body>
 </html>
