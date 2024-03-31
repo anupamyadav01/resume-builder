@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Resume Builder</title>
     <link rel="stylesheet" href="dist/output.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
     <style>
       .bg-white-btn {
         padding: 8px 15px;
@@ -49,6 +53,9 @@
       #cards {
         box-shadow: 0 0 10px 0 rgba(163, 178, 212, 0.3);
         transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      }
+      video::-webkit-media-controls {
+        display: none;
       }
     </style>
   </head>
@@ -165,7 +172,7 @@
         </section>
       </div>
 
-      <div class="mt-10 h-screen">
+      <div class="mt-10 h-screen border-2 border-red-500">
         <div class="mx-auto max-w-[1200px] px-10">
           <!-- heading section  -->
           <section class="mb-16 text-center">
@@ -223,7 +230,7 @@
 
       <!-- features section  -->
 
-      <div class="h-screen w-full border-2 border-black">
+      <div class="w-full bg-[#fff]">
         <div class="mx-auto max-w-[1200px] px-10">
           <!-- heading section  -->
           <section class="mb-12 text-center">
@@ -237,22 +244,96 @@
           </section>
 
           <!-- feature section 1 -->
-          <section class="flex">
-            <div>
-              <h4>SMART PARSING</h4>
-              <h3>Instant benchmarking and scoring for targeted guidance</h3>
-              <p>
-                User profiles are evaluated on 100+ parameters including
-                language, skills/competencies, and presentation.
+          <section class="mb-16 flex justify-between">
+            <div class="flex flex-col justify-center">
+              <h4 class="mb-12 text-2xl font-medium text-[#496BC4]">
+                SMART PARSING
+              </h4>
+              <h3 class="text-4xl font-medium leading-[50px]">
+                Instant benchmarking <br />
+                and scoring for <br />
+                targeted guidance
+              </h3>
+              <p class="mt-4 text-sm tracking-wider">
+                User profiles are evaluated on 100+ parameters <br />
+                including language, skills/competencies, and presentation.
               </p>
             </div>
-            <div>
+            <div class="h-[520px] w-[50%]">
               <video
+                class="h-full"
                 src="https://d1dcu9ldna0u98.cloudfront.net/assets/website/landing-anims/rp.mp4"
+                controls
+                autoplay
+                loop
+              ></video>
+            </div>
+          </section>
+
+          <!-- feature section 2 -->
+          <section class="mb-16 flex justify-between">
+            <div class="h-[520px] w-[50%]">
+              <video
+                class="h-full"
+                src="https://d1dcu9ldna0u98.cloudfront.net/assets/website/landing-anims/se.mp4"
+                controls
+                autoplay
+                loop
+              ></video>
+            </div>
+            <div class="flex flex-col justify-center">
+              <h4 class="mb-12 text-2xl font-medium text-[#496BC4]">
+                SMART SKILLS ENGINE
+              </h4>
+              <h3 class="text-4xl font-medium leading-[50px]">
+                Skill detection through <br />
+                advanced machine<br />
+                learning algorithms
+              </h3>
+              <p class="mt-4 text-sm tracking-wider">
+                Identify skills using semantic analysis, natural language <br />
+                processing (NLP), and machine learning across <br />
+                functions, industries, job roles, and experience levels <br />
+                to provide targeted guidance.
+              </p>
+            </div>
+          </section>
+
+          <!-- feature section 3   -->
+          <section class="mb-16 flex justify-between">
+            <div class="flex flex-col justify-center">
+              <h4 class="mb-12 text-2xl font-medium text-[#496BC4]">
+                JOB PARSING AND CLUSTERING
+              </h4>
+              <h3 class="text-4xl font-medium leading-[50px]">
+                Extract and harmonize<br />
+                key elements from jobs
+              </h3>
+              <p class="mt-4 text-sm tracking-wider">
+                Create clusters and generate aggregated views of <br />
+                sought-after positions by ascertaining implicit and <br />
+                explicit similarities.
+              </p>
+            </div>
+            <div class="h-[520px] w-[50%]">
+              <video
+                class="h-full"
+                src="https://d1dcu9ldna0u98.cloudfront.net/assets/website/landing-anims/jd.mp4"
+                controls
+                autoplay
+                loop
               ></video>
             </div>
           </section>
         </div>
+      </div>
+
+      <!-- footer section  -->
+      <div class="flex h-11 items-center justify-center bg-red-500 text-center">
+        <span class="text-2xl font-semibold">Create a Resume</span>
+        <span class="material-symbols-outlined flex h-[44px] w-[44px]">
+          chevron_right
+        </span>
       </div>
     </main>
   </body>
