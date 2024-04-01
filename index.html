@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Resume Builder</title>
+    <title>Home</title>
     <link rel="stylesheet" href="dist/output.css" />
     <link
       rel="stylesheet"
@@ -98,14 +98,24 @@
 
         <!-- button  -->
         <div>
-          <button class="bg-white-btn mr-2">Login</button>
-          <button class="bg-blue-btn">Register</button>
+          <a
+            href="./login_register/login.html"
+            class="bg-white-btn mr-2"
+            id="login_btn"
+            >Login</a
+          >
+          <a
+            href="./login_register/register.html"
+            class="bg-blue-btn"
+            id="register_btn"
+            >Register</a
+          >
         </div>
       </nav>
     </div>
 
     <!-- main section/hero section  -->
-    <main class="w-full bg-[#f4f4f4] pt-20">
+    <main class="mb-8 w-full bg-[#f4f4f4] pt-20">
       <!-- left section  -->
       <div class="mx-auto grid h-screen max-w-[1200px] grid-cols-2 px-10">
         <section class="h-screen">
@@ -121,7 +131,9 @@
               minutes. Increase your interview chances and rise above the
               competition.
             </p>
-            <button class="bg-blue-btn">Create My Resume</button>
+            <a href="./login_register/login.html" class="bg-blue-btn"
+              >Create My Resume</a
+            >
           </div>
         </section>
         <!-- right section  -->
@@ -172,7 +184,7 @@
         </section>
       </div>
 
-      <div class="mt-10 h-screen border-2 border-red-500">
+      <div class="mt-10 h-screen">
         <div class="mx-auto max-w-[1200px] px-10">
           <!-- heading section  -->
           <section class="mb-16 text-center">
@@ -329,12 +341,24 @@
       </div>
 
       <!-- footer section  -->
-      <div class="flex h-11 items-center justify-center bg-red-500 text-center">
-        <span class="text-2xl font-semibold">Create a Resume</span>
-        <span class="material-symbols-outlined flex h-[44px] w-[44px]">
-          chevron_right
-        </span>
-      </div>
+      <a href="#">
+        <div
+          class="fixed bottom-0 left-[40%] mb-6 flex h-11 cursor-pointer items-center justify-center text-center transition-all hover:scale-105"
+        >
+          <span
+            class="flex items-center justify-center rounded-md border border-black bg-white p-2 text-2xl font-semibold tracking-tighter"
+            >Create a Resume
+            <!-- <span class="material-symbols-outlined"> chevron_right </span> -->
+            <i
+              class="fa-solid fa-arrow-right -mb-1 ml-4 rounded-full bg-[#1a1c6a] p-3 text-lg text-white"
+            ></i>
+          </span>
+        </div>
+      </a>
     </main>
+    <script
+      src="https://kit.fontawesome.com/fe1650bc18.js"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
