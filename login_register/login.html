@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8" />
-    <title>Login and Registration Form in HTML & CSS | CodingLab</title>
+    <title>Login</title>
     <link rel="stylesheet" href="./register.css" />
     <!-- Fontawesome CDN Link -->
     <link
@@ -13,28 +13,31 @@
   </head>
   <body>
     <div class="container">
-      <div class="cover"></div>
       <div class="forms">
         <div class="form-content">
           <div class="login-form">
             <div class="title">Login</div>
-            <form action="#">
+            <form action="../index.html" onsubmit="return userLoginFunction()">
               <div class="input-boxes">
                 <div class="input-box">
                   <i class="fas fa-envelope"></i>
-                  <input type="email" placeholder="Enter your email" required />
+                  <input
+                    type="email"
+                    placeholder="Enter your email"
+                    id="user_email"
+                  />
                 </div>
                 <div class="input-box">
                   <i class="fas fa-lock"></i>
                   <input
                     type="password"
                     placeholder="Enter your password"
-                    required
+                    id="user_password"
                   />
                 </div>
                 <div class="text"><a href="#">Forgot password?</a></div>
                 <div class="button input-box">
-                  <input type="submit" value="Sumbit" />
+                  <input type="submit" value="Sumbit" id="submit_btn" />
                 </div>
                 <div class="text sign-up-text">
                   Don't have an account?
@@ -48,5 +51,43 @@
         </div>
       </div>
     </div>
+    <script>
+      let registeredUser = JSON.parse(localStorage.getItem("userList"));
+      // console.log(registeredUser);
+      function userLoginFunction() {
+        let user_email = document.getElementById("user_email");
+        let user_password = document.getElementById("user_password");
+
+        if (user_email.value === "") {
+          alert("Please enter your email");
+          return false;
+        }
+        if (user_password.value === "") {
+          alert("Please enter your password");
+          return false;
+        }
+        if (registeredUser === null) {
+          alert("No data found!!. Please register first");
+          return false;
+        }
+        let result = registeredUser.some((person) => {
+          return (
+            person.email === user_email.value &&
+            person.password === user_password.value
+          );
+        });
+
+        if (result) {
+          alert("User logged In successfully");
+          user_email.value = "";
+          user_password.value = "";
+          return true;
+        } else {
+          alert("Invalid email or password");
+          user_password.value = "";
+          return false;
+        }
+      }
+    </script>
   </body>
 </html>

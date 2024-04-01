@@ -3,7 +3,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8" />
-    <title>Responsive Registration Form | CodingLab</title>
+    <title>Registration Form</title>
     <link rel="stylesheet" href="./login.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
@@ -11,31 +11,47 @@
     <div class="container">
       <div class="title">Registration</div>
       <div class="content">
-        <form action="#">
+        <form action="./login.html" onsubmit="return registerForm()">
           <div class="user-details">
             <div class="input-box">
               <span class="details">Full Name</span>
-              <input type="text" placeholder="Enter your name" required />
+              <input id="full_name" type="text" placeholder="Enter your name" />
             </div>
             <div class="input-box">
               <span class="details">Username</span>
-              <input type="text" placeholder="Enter your username" required />
+              <input
+                id="user_name"
+                type="text"
+                placeholder="Enter your username"
+              />
             </div>
             <div class="input-box">
               <span class="details">Email</span>
-              <input type="text" placeholder="Enter your email" required />
+              <input id="email" type="text" placeholder="Enter your email" />
             </div>
             <div class="input-box">
               <span class="details">Phone Number</span>
-              <input type="text" placeholder="Enter your number" required />
+              <input
+                id="phone_number"
+                type="text"
+                placeholder="Enter your number"
+              />
             </div>
             <div class="input-box">
               <span class="details">Password</span>
-              <input type="text" placeholder="Enter your password" required />
+              <input
+                id="password"
+                type="text"
+                placeholder="Enter your password"
+              />
             </div>
             <div class="input-box">
               <span class="details">Confirm Password</span>
-              <input type="text" placeholder="Confirm your password" required />
+              <input
+                id="confirm_password"
+                type="text"
+                placeholder="Confirm your password"
+              />
             </div>
           </div>
           <div class="gender-details">
@@ -64,5 +80,6 @@
         </form>
       </div>
     </div>
+    <script src="./script.js"></script>
   </body>
 </html>
