@@ -28,6 +28,7 @@ let firstnameElem = mainForm.firstname,
     phonenoElem = mainForm.phoneno,
     summaryElem = mainForm.summary;
 
+
 // display elements
 let nameDsp = document.getElementById("fullname_dsp"),
     imageDsp = document.getElementById("image_dsp"),
@@ -91,120 +92,6 @@ const getUserInputs = () => {
 
     let skillElem = document.querySelectorAll(".skill");
 
-    // event listeners for form validation
-    firstnameElem.addEventListener("keyup", (e) =>
-        validateFormData(e.target, validType.TEXT, "First Name")
-    );
-    middlenameElem.addEventListener("keyup", (e) =>
-        validateFormData(e.target, validType.TEXT_EMP, "Middle Name")
-    );
-    lastnameElem.addEventListener("keyup", (e) =>
-        validateFormData(e.target, validType.TEXT, "Last Name")
-    );
-    phonenoElem.addEventListener("keyup", (e) =>
-        validateFormData(e.target, validType.PHONENO, "Phone Number")
-    );
-    emailElem.addEventListener("keyup", (e) =>
-        validateFormData(e.target, validType.EMAIL, "Email")
-    );
-    addressElem.addEventListener("keyup", (e) =>
-        validateFormData(e.target, validType.ANY, "Address")
-    );
-    designationElem.addEventListener("keyup", (e) =>
-        validateFormData(e.target, validType.TEXT, "Designation")
-    );
-
-    achievementsTitleElem.forEach((item) =>
-        item.addEventListener("keyup", (e) =>
-            validateFormData(e.target, validType.ANY, "Title")
-        )
-    );
-    achievementsDescriptionElem.forEach((item) =>
-        item.addEventListener("keyup", (e) =>
-            validateFormData(e.target, validType.ANY, "Description")
-        )
-    );
-    expTitleElem.forEach((item) =>
-        item.addEventListener("keyup", (e) =>
-            validateFormData(e.target, validType.ANY, "Title")
-        )
-    );
-    expOrganizationElem.forEach((item) =>
-        item.addEventListener("keyup", (e) =>
-            validateFormData(e.target, validType.ANY, "Organization")
-        )
-    );
-    expLocationElem.forEach((item) =>
-        item.addEventListener("keyup", (e) =>
-            validateFormData(e.target, validType.ANY, "Location")
-        )
-    );
-    expStartDateElem.forEach((item) =>
-        item.addEventListener("blur", (e) =>
-            validateFormData(e.target, validType.ANY, "End Date")
-        )
-    );
-    expEndDateElem.forEach((item) =>
-        item.addEventListener("keyup", (e) =>
-            validateFormData(e.target, validType.ANY, "End Date")
-        )
-    );
-    expDescriptionElem.forEach((item) =>
-        item.addEventListener("keyup", (e) =>
-            validateFormData(e.target, validType.ANY, "Description")
-        )
-    );
-    eduSchoolElem.forEach((item) =>
-        item.addEventListener("keyup", (e) =>
-            validateFormData(e.target, validType.ANY, "School")
-        )
-    );
-    eduDegreeElem.forEach((item) =>
-        item.addEventListener("keyup", (e) =>
-            validateFormData(e.target, validType.ANY, "Degree")
-        )
-    );
-    eduCityElem.forEach((item) =>
-        item.addEventListener("keyup", (e) =>
-            validateFormData(e.target, validType.ANY, "City")
-        )
-    );
-    eduStartDateElem.forEach((item) =>
-        item.addEventListener("blur", (e) =>
-            validateFormData(e.target, validType.ANY, "Start Date")
-        )
-    );
-    eduGraduationDateElem.forEach((item) =>
-        item.addEventListener("blur", (e) =>
-            validateFormData(e.target, validType.ANY, "Graduation Date")
-        )
-    );
-    eduDescriptionElem.forEach((item) =>
-        item.addEventListener("keyup", (e) =>
-            validateFormData(e.target, validType.ANY, "Description")
-        )
-    );
-    projTitleElem.forEach((item) =>
-        item.addEventListener("keyup", (e) =>
-            validateFormData(e.target, validType.ANY, "Title")
-        )
-    );
-    projLinkElem.forEach((item) =>
-        item.addEventListener("keyup", (e) =>
-            validateFormData(e.target, validType.ANY, "Link")
-        )
-    );
-    projDescriptionElem.forEach((item) =>
-        item.addEventListener("keyup", (e) =>
-            validateFormData(e.target, validType.ANY, "Description")
-        )
-    );
-    skillElem.forEach((item) =>
-        item.addEventListener("keyup", (e) =>
-            validateFormData(e.target, validType.ANY, "skill")
-        )
-    );
-
     return {
         firstname: firstnameElem.value,
         middlename: middlenameElem.value,
@@ -261,41 +148,6 @@ const getUserInputs = () => {
     };
 };
 
-function validateFormData(elem, elemType, elemName) {
-    // checking for text string and non empty string
-    if (elemType == validType.TEXT) {
-        if (!strRegex.test(elem.value) || elem.value.trim().length == 0)
-            addErrMsg(elem, elemName);
-        else removeErrMsg(elem);
-    }
-
-    // checking for only text string
-    if (elemType == validType.TEXT_EMP) {
-        if (!strRegex.test(elem.value)) addErrMsg(elem, elemName);
-        else removeErrMsg(elem);
-    }
-
-    // checking for email
-    if (elemType == validType.EMAIL) {
-        if (!emailRegex.test(elem.value) || elem.value.trim().length == 0)
-            addErrMsg(elem, elemName);
-        else removeErrMsg(elem);
-    }
-
-    // checking for phone number
-    if (elemType == validType.PHONENO) {
-        if (!phoneRegex.test(elem.value) || elem.value.trim().length == 0)
-            addErrMsg(elem, elemName);
-        else removeErrMsg(elem);
-    }
-
-    // checking for only empty
-    if (elemType == validType.ANY) {
-        if (elem.value.trim().length == 0) addErrMsg(elem, elemName);
-        else removeErrMsg(elem);
-    }
-}
-
 // adding the invalid text
 function addErrMsg(formElem, formElemName) {
     formElem.nextElementSibling.innerHTML = `${formElemName} is invalid`;
@@ -343,7 +195,7 @@ const displayCV = (userData) => {
 const generateCV = () => {
     let userData = getUserInputs();
     displayCV(userData);
-    console.log(userData);
+    // console.log(userData);
 };
 
 function previewImage() {
@@ -358,3 +210,6 @@ function previewImage() {
 function printCV() {
     window.print();
 }
+const downloadBtn = document.getElementById("downlaod_cv_btn");
+const cvContainer = document.getElementById("preview-sc");
+downloadBtn.onclick = (e) => html2pdf(cvContainer);

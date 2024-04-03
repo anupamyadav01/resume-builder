@@ -1,16 +1,14 @@
-
-
 // form repeater
-$(document).ready(function(){
+$(document).ready(function () {
     $('.repeater').repeater({
         initEmpty: false,
         defaultValues: {
             'text-input': ''
         },
-        show:function(){
+        show: function () {
             $(this).slideDown();
         },
-        hide: function(deleteElement){
+        hide: function (deleteElement) {
             $(this).slideUp(deleteElement);
             setTimeout(() => {
                 generateCV();
