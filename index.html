@@ -6,10 +6,17 @@
     <title>Home</title>
     <link rel="stylesheet" href="dist/output.css" />
     <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
     />
     <style>
+      * {
+        scroll-behavior: smooth;
+      }
       .bg-white-btn {
         padding: 8px 15px;
         background-color: white;
@@ -86,8 +93,10 @@
             >
           </li>
           <li>
-            <a href="#" class="hover:border-b-2 hover:border-black"
-              >Career Coaching</a
+            <a
+              href="./job-suggestion/search-for-job.html"
+              class="hover:border-b-2 hover:border-black"
+              >Find Job</a
             >
           </li>
           <li>
@@ -158,10 +167,46 @@
                 alt=""
               />
             </span>
+            <span>
+              <img
+                src="https://s3.resume.io/cdn-cgi/image/width=384,format=auto/uploads/local_template_image/image/370/persistent-resource/stockholm-resume-templates.jpg"
+                alt=""
+              />
+            </span>
+            <span>
+              <img
+                src="https://s3.resume.io/cdn-cgi/image/width=384,format=auto/uploads/local_template_image/image/389/persistent-resource/new-york-resume-templates.jpg"
+                alt=""
+              />
+            </span>
+            <span>
+              <img
+                src="https://s3.resume.io/cdn-cgi/image/width=384,format=auto/uploads/local_template_image/image/383/persistent-resource/santiago-resume-templates.jpg"
+                alt=""
+              />
+            </span>
           </div>
 
           <!-- second line -->
           <div class="flex flex-col gap-8" id="nested-div">
+            <span>
+              <img
+                src="https://s3.resume.io/cdn-cgi/image/width=384,format=auto/uploads/local_template_image/image/441/persistent-resource/sydney-resume-templates.jpg"
+                alt=""
+              />
+            </span>
+            <span>
+              <img
+                src="https://s3.resume.io/cdn-cgi/image/width=384,format=auto/uploads/local_template_image/image/488/persistent-resource/dublin-resume-templates.jpg"
+                alt=""
+              />
+            </span>
+            <span>
+              <img
+                src="https://s3.resume.io/cdn-cgi/image/width=384,format=auto/uploads/local_template_image/image/406/persistent-resource/vienna-resume-templates.jpg"
+                alt=""
+              />
+            </span>
             <span>
               <img
                 src="https://s3.resume.io/cdn-cgi/image/width=384,format=auto/uploads/local_template_image/image/441/persistent-resource/sydney-resume-templates.jpg"
@@ -276,8 +321,9 @@
                 class="h-full"
                 src="https://d1dcu9ldna0u98.cloudfront.net/assets/website/landing-anims/rp.mp4"
                 controls
-                autoplay
                 loop
+                muted
+                plays-inline
               ></video>
             </div>
           </section>
@@ -289,8 +335,9 @@
                 class="h-full"
                 src="https://d1dcu9ldna0u98.cloudfront.net/assets/website/landing-anims/se.mp4"
                 controls
-                autoplay
                 loop
+                muted
+                plays-inline
               ></video>
             </div>
             <div class="flex flex-col justify-center">
@@ -334,6 +381,8 @@
                 controls
                 autoplay
                 loop
+                muted
+                plays-inline
               ></video>
             </div>
           </section>
@@ -341,14 +390,13 @@
       </div>
 
       <!-- footer section  -->
-      <a href="">
+      <a href="./login_register/login.html">
         <div
           class="fixed bottom-0 left-[40%] mb-6 flex h-11 cursor-pointer items-center justify-center text-center transition-all hover:scale-105"
         >
           <span
             class="flex items-center justify-center rounded-md border border-black bg-white p-2 text-2xl font-semibold tracking-tighter"
-            >Create a Resume
-            <!-- <span class="material-symbols-outlined"> chevron_right </span> -->
+            >Create a resume
             <i
               class="fa-solid fa-arrow-right -mb-1 ml-4 rounded-full bg-[#1a1c6a] p-3 text-lg text-white"
             ></i>

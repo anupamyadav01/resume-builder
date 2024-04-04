@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Resume Page</title>
+    <title>Resume Builder</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- custom css -->
@@ -13,6 +13,11 @@
   <body>
     <section id="about-sc">
       <div class="container">
+        <nav
+          class="sticky top-0 z-50 bg-white py-5 text-center text-5xl font-bold"
+        >
+          Resume Builder
+        </nav>
         <div class="about-cnt">
           <form action="" class="cv-form" id="cv-form">
             <div class="cv-form-blk">
@@ -610,11 +615,7 @@
 
     <section class="print-btn-sc" style="text-align: center">
       <div class="container">
-        <button
-          type="button"
-          class="print-btn btn btn-primary"
-          onclick="printCV()"
-        >
+        <button type="button" id="printBtn" class="print-btn btn btn-primary">
           Print CV
         </button>
         <button
@@ -624,13 +625,15 @@
         >
           Download CV
         </button>
-        <button
+        <a
           type="button"
+          id="get_jobs_btn"
+          href="./job-suggestion/job-suggest.html"
           class="print-btn btn btn-primary"
-          onclick="printCV()"
+          style="cursor: pointer"
         >
           Get Jobs Suggestions
-        </button>
+        </a>
         <button
           type="button"
           class="print-btn btn btn-primary"
@@ -640,6 +643,14 @@
         </button>
       </div>
     </section>
+    <!-- job Suggestions section  -->
+    <script type="importmap">
+      {
+        "imports": {
+          "@google/generative-ai": "https://esm.run/@google/generative-ai"
+        }
+      }
+    </script>
 
     <!-- jquery cdn -->
     <script
@@ -647,17 +658,20 @@
       integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E="
       crossorigin="anonymous"
     ></script>
-    <!-- jquery repeater cdn -->
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery.repeater/1.2.1/jquery.repeater.js"
       integrity="sha512-bZAXvpVfp1+9AUHQzekEZaXclsgSlAeEnMJ6LfFAvjqYUVZfcuVXeQoN5LhD7Uw0Jy4NCY9q3kbdEXbwhZUmUQ=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
-    <!-- custom js -->
+
+    <!-- custom resume  -->
     <script src="./js/script.js"></script>
-    <!-- app js -->
     <script src="./js/app.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- gemini script -->
+    <script src="https://cdn.jsdelivr.net/npm/markdown-it/dist/markdown-it.min.js"></script>
+    <!-- <script src="./js/gemini.js" type="module"></script> -->
   </body>
 </html>

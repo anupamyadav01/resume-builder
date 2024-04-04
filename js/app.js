@@ -190,13 +190,19 @@ const displayCV = (userData) => {
     showListData(userData.educations, educationsDsp);
     showListData(userData.experiences, experiencesDsp);
 };
-
 // generate CV
 const generateCV = () => {
     let userData = getUserInputs();
+    localStorage.setItem("userData", JSON.stringify(userData));
     displayCV(userData);
     // console.log(userData);
 };
+function jobSuggestions(skills) {
+    skills.forEach((skill) => {
+        // askGemini(skill.skill);
+        return skill.skill;
+    })
+}
 
 function previewImage() {
     let oFReader = new FileReader();
@@ -206,10 +212,19 @@ function previewImage() {
     };
 }
 
-// print CV
-function printCV() {
-    window.print();
-}
 const downloadBtn = document.getElementById("downlaod_cv_btn");
 const cvContainer = document.getElementById("preview-sc");
 downloadBtn.onclick = (e) => html2pdf(cvContainer);
+
+document.getElementById("printBtn").addEventListener("click", function () {
+    var contentToPrint = document.getElementById("preview-sc").innerHTML;
+    var originalBodyContent = document.body.innerHTML;
+    document.body.innerHTML = contentToPrint;
+    window.print();
+    document.body.innerHTML = originalBodyContent;
+});
+
+const getJobsBtn = document.getElementById("get_jobs_btn");
+getJobsBtn.addEventListener("click", function () {
+    let anupamdata = getUserInputs();
+})

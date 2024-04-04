@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Design Your Website With Background Video</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+
+    <script src="https://cdn.jsdelivr.net/npm/markdown-it/dist/markdown-it.min.js"></script>
+  </head>
+  <body>
+    <div class="banner">
+      <div class="context">
+        <h1 class="md:2xl mb-4 text-center text-4xl font-bold text-black">
+          Projects Based on your skills are here
+        </h1>
+
+        <div id="projectRecommendation" class="text-3xl text-white">
+          <div class="loading-container text-start">
+            <div id="loading-text"><span class="loader"></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="importmap">
+      {
+        "imports": {
+          "@google/generative-ai": "https://esm.run/@google/generative-ai"
+        }
+      }
+    </script>
+    <script type="module">
+      import { GoogleGenerativeAI } from "@google/generative-ai";
+      const API_KEY = "AIzaSyAYhghPB47muOGdbJ-p26A7AUxRSxQ94cw";
+      const md = window.markdownit();
+      const genAI = new GoogleGenerativeAI(API_KEY);
+
+      let text;
+
+      const urlParams = new URLSearchParams(window.location.search);
+
+      const skill = urlParams.get("project");
+
+      //   console.log(skill);
+
+      async function run() {
+        let projectRecommendation = document.getElementById(
+          "projectRecommendation",
+        );
+        // For text-only input, use the gemini-pro model
+        const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+
+        const prompt =
+          "Projects based on " +
+          "frontend" +
+          " are and also give some link for refrences link like after clicking on them we should indirect there: ";
+        // const prompt =
+        //   "give me some projects based on " +
+        //   "frontend" +
+        //   "and arrange them numberwise and arrange list with link";
+        // // const prompt = "rohit sharma";
+
+        const result = await model.generateContent(prompt);
+        const response = await result.response;
+        text = response.text();
+        projectRecommendation.innerHTML = "";
+        projectRecommendation.innerHTML += md.render(text);
+
+        console.log(text);
+      }
+      window.addEventListener("load", () => {
+        // window.location.href="./jobs.html";
+        // document.getElementById('jobsearch').style.display = "block"
+        run();
+        console.log("html");
+        // document.getElementById('abhi').innerHTML=text;
+      });
+    </script>
+  </body>
+</html>
