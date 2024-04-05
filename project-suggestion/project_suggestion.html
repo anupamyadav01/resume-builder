@@ -46,38 +46,33 @@
       const skill = urlParams.get("project");
 
       //   console.log(skill);
+      const userData = JSON.parse(localStorage.getItem("userData"));
+      let userSkills = userData.skills;
+      userSkills.forEach((element) => {
+        async function run() {
+          let projectRecommendation = document.getElementById(
+            "projectRecommendation",
+          );
 
-      async function run() {
-        let projectRecommendation = document.getElementById(
-          "projectRecommendation",
-        );
-        // For text-only input, use the gemini-pro model
-        const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+          // For text-only input, use the gemini-pro model
+          const model = genAI.getGenerativeModel({ model: "gemini-pro" });
 
-        const prompt =
-          "Projects based on " +
-          "html, CSS AND JS" +
-          " are and also give some clickable link for refrences link like after clicking on them we should indirect there: ";
-        // const prompt =
-        //   "give me some projects based on " +
-        //   "frontend" +
-        //   "and arrange them numberwise and arrange list with link";
-        // // const prompt = "rohit sharma";
+          const prompt =
+            "Projects based on " +
+            element.skill +
+            " are and also give some clickable link for refrences link like after clicking on them we should indirect there: ";
 
-        const result = await model.generateContent(prompt);
-        const response = await result.response;
-        text = response.text();
-        projectRecommendation.innerHTML = "";
-        projectRecommendation.innerHTML += md.render(text);
+          const result = await model.generateContent(prompt);
+          const response = await result.response;
+          text = response.text();
+          projectRecommendation.innerHTML = "";
+          projectRecommendation.innerHTML += md.render(text);
 
-        console.log(text);
-      }
-      window.addEventListener("load", () => {
-        // window.location.href="./jobs.html";
-        // document.getElementById('jobsearch').style.display = "block"
-        run();
-        console.log("html");
-        // document.getElementById('abhi').innerHTML=text;
+          console.log(text);
+        }
+        window.addEventListener("load", () => {
+          run();
+        });
       });
     </script>
   </body>
